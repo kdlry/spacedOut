@@ -1,0 +1,273 @@
+// Wrapper ....................
+.wrapper {
+    max-width: 1250px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+// Headers ....................
+h1 {
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-family: $primaryFont;
+    color: #f9f9f9;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: $secondaryFont;
+    color: #2c6471;
+    margin-top: 20px;
+}
+
+h3 { 
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: $secondaryFont;
+    color: #2c6471;
+}
+
+h4 {
+    font-size: 2.5rem;
+    font-family: $secondaryFont;
+    color: #1b414a;
+}
+
+// Text ....................
+p {
+    font-family: $secondaryFont;
+}
+
+
+
+// Links, buttons and spans ....................
+.satButton,
+.resetButton {
+    color: #f9f9f9;
+    font-size: 2rem;
+    font-family:$secondaryFont;
+    text-transform: uppercase;
+    border: none;
+    background: #4164FF;
+    padding: 15px 15px;
+    border:  #f9f9f9 2px solid; 
+
+    &:hover,
+    &:focus {
+        border: #4164FF 2px solid;
+        color: #4164FF;
+        background: #f9f9f9
+    }
+}
+
+// .resetButton {
+//     color: #65bbe3;
+//     font-size: 2.2rem;
+//     font-family:$secondaryFont;
+//     border: none;
+//     background: none;
+//     padding: 5px;
+//     margin-top: 35px;
+//     border-bottom: #65bbe3 2px solid; 
+// }
+
+.locationButton {
+    font-family:$secondaryFont;
+    border: none;
+    background: none;
+    align-self: center;
+    height: 100%;
+
+    span {
+        font-size: 3.5rem;
+
+        .fa-stack-2x {
+            color: darkgray;
+        }
+        .fa-stack-1x {
+            color: #f9f9f9;
+        }
+    }
+}
+
+
+
+// Forms (inputs + labels) ....................
+form {
+    label {
+        font-size: 2rem;
+        font-family:$secondaryFont;
+        padding: 20px 0;
+        margin-bottom: 20px;
+
+    }
+
+    input{
+        padding: 10px;
+        font-size: 1.8rem;
+        line-height: 30px;
+        letter-spacing: 2px;
+        border: none;
+        border-bottom: grey 2px solid;
+
+        &::placeholder {
+            color: #bdbdbd;
+            font-size: 1.8rem;
+            font-family:$secondaryFont;
+            line-height: 30px;
+            letter-spacing: 2px;
+        }
+    }
+    input {
+        width: 400px;
+    }
+}
+
+
+// Header styles ....................
+header {
+    height: 50vh;
+    background: #43adc4a7;
+        
+    div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            align-self: flex-end;
+            border-bottom: 2px solid #aaa
+        }
+        h2 { 
+            align-self: flex-end;
+        }
+    }
+}
+
+// Main styles ....................
+main {
+    padding: 50px 0 75px 0;
+
+    .introSection{
+        p {
+            padding-bottom: 25px;
+        }
+    }
+
+    .satButton {
+        margin-top: 25px;
+    }
+
+    .satSearch {
+        display: flex;
+        justify-content: space-between;
+    
+        .satInfo {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding-bottom: 25px;
+        }
+    
+        .satDisplay {
+            display: flex;
+            justify-content: space-between;
+    
+            p {
+                align-self: flex-end;
+                padding-right: 10px;
+            }
+    
+            .info {
+                width: 250px;
+                padding: 20px;
+                border-bottom: 2px #545454 solid;
+                // align-items: flex-end;
+            }
+        }
+    }
+
+    .resetButton {
+    margin-bottom: 30px;
+    }
+}
+
+.landOrWater {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .landOrWaterDisplay {
+        text-align: center;
+
+        .txt {
+            width: 100%
+        }
+    
+        .img {
+            width: 40%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.outputs {
+    height: 100%;
+
+    h3 {
+        padding: 20px 0;
+        margin: 20px 0;
+        width: 9%;
+        border-bottom: 2px solid #aaa;
+
+    }
+
+    .map {
+        // border: #6a888f 2px solid;
+
+        img {
+            width: auto;
+            height: 100%;;
+        }
+    }
+}
+
+// Main styles ....................
+footer {
+    background: #545454;
+    padding: 20px 0;
+
+    p {
+        font-size: 1.8rem;
+        color: #f9f9f9;
+        text-align: center;
+    }
+
+    a {
+        color: #ea593e;
+
+        &:hover, &:focus {
+            border-bottom: #ea593e dotted 2px;
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.satDisplay .info p.infoTxt {
+    size: 1.6rem;
+}
+
+.displayTxt {
+    color: #B22BFF;
+    font-size: 3rem;
+    padding-top: 25px;
+}
+
+// url:  url: `${spaceApp.landOrWaterEndPoint},${spaceApp}`,
