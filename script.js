@@ -150,6 +150,8 @@ spaceApp.searchLocation = (location) => {
 
       spaceApp.userLat = (res.results[0].locations[0].latLng.lng);
       spaceApp.userLong = (res.results[0].locations[0].latLng.lat);
+
+      console.log(getDistanceFromLatLonInKm);
    });
 }
 
@@ -186,8 +188,9 @@ spaceApp.findLocation = function() {
       let userLocationInput = $('input').val();
       console.log(userLocationInput);
 
-      spaceApp.searchLocation(userLocationInput);
-      // codeBreakApp.findPlace(selectedPlaceInput);
+      // spaceApp.searchLocation(userLocationInput);
+
+      // console.log(spaceApp.calculateLocation);
    });
 }
 
@@ -210,15 +213,8 @@ spaceApp.findLocation = function() {
 //    function deg2rad(deg) {
 //       return deg * (Math.PI / 180)
 //    }
-
-//    getDistanceFromLatLonInKm(spaceApp.latitude, spaceApp.longitude, spaceApp.userLat, spaceApp.userLng)
+//    spaceApp.calculateLocation(spaceApp.latitude, spaceApp.longitude, spaceApp.userLat, spaceApp.userLng)
 // }
-
-// spaceApp.latitude = 0;
-// spaceApp.longitude = 0;
-// spaceApp.userLat = 0;
-// spaceApp.userLng = 0;
-
 
 // Initializing functions
 spaceApp.init = function() {

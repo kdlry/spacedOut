@@ -20,37 +20,37 @@
                 <h2>Track the ISS</h2>
             </div> 
         </div>
-        <!-- <div><img src="./assets/toronto-canada-city-skyline-silhouette-vector-1457936.jpg" alt=""></div> -->
-        <!-- This could be a cool overlay behind a semi-transparent blue header -->
     </header>
 
     <!-- Main .................... -->
     <main>
         <div class="wrapper">
 
-            <!-- Form Inputs Section .................... -->
+            <!-- Intro section ...... -->
             <div class="introSection">
                 <h3>Fun facts</h3>
-                <p>The ISS revolves around the Earth at about 17,500 mph (~28,000 km/h) resulting in it completing one revolution in about 90 minutes, and about 16 revolutions per day. The ISS rotates about its center of mass at a rate of about 4 degrees per minute so that it will complete a full rotation once per orbit.</p>
-                <p>https://www.forbes.com/sites/quora/2017/10/03/how-does-the-iss-travel-around-the-earth/#28877d90141f</p>
+                <p>The International Space Station (ISS) revolves around the Earth at about 17,500 mph (~28,000 km/h) resulting in it completing one revolution in about 90 minutes, and about 16 revolutions per day. The ISS rotates about its center of mass at a rate of about 4 degrees per minute so that it will complete a full rotation once per orbit.<a role="link" href="https://www.forbes.com/sites/quora/2017/10/03/how-does-the-iss-travel-around-the-earth/#28877d90141f">Source</a></p>
+                
+                <!-- ISS live feed ...... -->
                 <iframe width="480" height="270" src="https://ustream.tv/embed/9408562" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+                
+                <p>Note: The ISS feed may be interrupted at times. <a role="link" href="https://www.nasa.gov/multimedia/nasatv/iss_ustream.html">Source</a></p>
             </div>
 
-            <section class="satPosition">   
-                
-                <!-- Location ...... -->
-                <!-- Search button ...... -->
+            <!-- Station positioning .................... -->
+            <section>   
                 <h3>where's the station now?</h3>
                 <p>Click on the button below to populate the station's current location details and find out if it's over land or water.</p>
 
+                <!-- Station search button ...... -->
                 <button class="satButton" type="submit">Let's find out!</button>
                 
-                <!-- Position ...... -->
+                <!-- Station results ...... -->
                 <div class="satSearch">
                     
-                    <!-- Position ...... -->
+                    <!-- Position details display ...... -->
                     <div class="satPosition">
-                        <h4>Satellite position</h4>
+                        <h4>Station position</h4>
                         <div class="satInfo">
                             <div class="satDisplay" id="satDisplay1">
                                 <p>Timestamp:</p>
@@ -73,7 +73,7 @@
                             </div>
                             
                             <div class="satDisplay" id="satDisplay5">
-                                <p>Visibility (miles):</p>
+                                <p>Visibility:</p>
                                 <div class="info info5"></div>
                             </div>
                             
@@ -84,7 +84,7 @@
                         </div>
                     </div>    
 
-                    <!-- Position ...... -->
+                    <!-- Land or water display ...... -->
                     <div class="landOrWater">
                         <h4>Is it over land or water?</h4>
                         <div class="landOrWaterDisplay">
@@ -98,15 +98,21 @@
                 <button class="resetButton" type="reset">Reset</button>
 
             </section>
-            <!-- Outputs Section .................... -->
+
+            <!-- Distance from a location .................... -->
             <section class="satDistance">
                 <h3>How far is it from a given location?</h3>
+
+                <!-- User location input ...... -->
                 <form class="form" action="">
+
+                    <!-- Location input ...... -->
                     <div class="locationInput">
                         <label for="location">Start Location</label>
                         <input id="location" type="text" aria-hidden="true" placeholder="123 Main St. Toronto, ON">
                     </div>
-
+                    
+                    <!-- Location search button ...... -->
                     <div class="searchButton">
                         <button class="locationButton" type="submit" aria-label="click here to search for a location">
                             <span class="fa-stack fa-2x" role="img" aria-hidden="true">
@@ -117,7 +123,7 @@
                     </div>
                 </form>
 
-                <div class="map"></div>
+                <div class="distance"></div>
             </section>
 
         </div>
@@ -129,8 +135,7 @@
         <p>Copyright &#169 2020 Juno College of Technology</p>
     </footer>
     
-    <!-- JS .................... -->
-    
+    <!-- JS .................... -->    
     <!-- jQuery library ...... -->
     <script src='https://code.jquery.com/jquery-3.5.1.min.js' integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous'></script>
     
