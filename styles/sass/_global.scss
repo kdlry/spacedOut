@@ -39,9 +39,14 @@ p {
     font-family: $secondaryFont;
 }
 
+.introSection p {
+    span.highlight {
+        font-style: bold;
+        color: #4164FF
+    }
+}
 
-
-// Links, buttons and spans ....................
+// Links, buttons ....................
 .satButton,
 .resetButton {
     color: #f9f9f9;
@@ -61,17 +66,6 @@ p {
     }
 }
 
-// .resetButton {
-//     color: #65bbe3;
-//     font-size: 2.2rem;
-//     font-family:$secondaryFont;
-//     border: none;
-//     background: none;
-//     padding: 5px;
-//     margin-top: 35px;
-//     border-bottom: #65bbe3 2px solid; 
-// }
-
 .locationButton {
     font-family:$secondaryFont;
     border: none;
@@ -89,6 +83,12 @@ p {
             color: #f9f9f9;
         }
     }
+}
+
+a {
+    color: B22BFF;
+    font-size: 2rem;
+    text-decoration: underline;
 }
 
 
@@ -256,6 +256,7 @@ footer {
     }
 }
 
+// Dynamic JS classes ....................
 .hide {
     display: none;
 }
@@ -269,5 +270,3 @@ footer {
     font-size: 3rem;
     padding-top: 25px;
 }
-
-// url:  url: `${spaceApp.landOrWaterEndPoint},${spaceApp}`,

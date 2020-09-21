@@ -300,6 +300,11 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+.introSection p span.highlight {
+  font-style: bold;
+  color: #4164FF;
+}
+
 .satButton,
 .resetButton {
   color: #f9f9f9;
@@ -340,6 +345,12 @@ p {
 
 .locationButton span .fa-stack-1x {
   color: #f9f9f9;
+}
+
+a {
+  color: B22BFF;
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 form label {
