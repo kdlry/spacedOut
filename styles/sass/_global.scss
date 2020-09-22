@@ -26,7 +26,7 @@ h3 {
     font-size: calc(2.5rem + 1.5vw);
     letter-spacing: 1px;
     color: #2c6471;
-    padding: 20px 0;
+    padding: 0 0 30px 0;
 }
 
 h4 {
@@ -161,12 +161,12 @@ header {
 
 // Main styles ....................
 main {
-    padding: 50px 0 75px 0;
+    padding: 75px 0;
     background: #e4fbff;
 
     .introSection {
-        padding-bottom: 25px;
-        margin-bottom: 25px;
+        padding-bottom: 45px;
+        margin-bottom: 75px;
         border-bottom: 3px solid #256e7ea7;
 
         p {
@@ -177,10 +177,6 @@ main {
             width: 480px;
             height: 270px;
         }
-
-        p.videoText {
-            padding-top: 10px;
-        }
     }
 
     .satButton {
@@ -188,10 +184,12 @@ main {
     }    
 }
 
+// Station position styles .......
 .satSearch {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 75px;
     border-bottom: 3px solid #256e7ea7;    
     
     .satInfo {
@@ -219,15 +217,12 @@ main {
     }
 }
 
+// Land or water styles .......
 .landOrWater {
     max-width:400px;
     width: 400px;
     flex-direction: column;
     text-align: center;
-
-    h2 { 
-        margin-bottom: 50px;
-    }
 
     .landOrWaterDisplay {
         text-align: center;
@@ -246,15 +241,7 @@ main {
     }
 }
 
-.satDistance {
-    height: 100%;
-
-    h3 {
-        padding: 20px 0;
-        margin: 20px 0;
-    }
-}
-
+// Location distance styles .......
 form { 
     display: flex;
     flex-direction: column;
@@ -314,7 +301,9 @@ footer {
 
 
 // Media queries ....................
+// Desktop .......
 @media (max-width: 1234px) { 
+
     .satSearch {
         flex-direction: column;
         
@@ -336,15 +325,27 @@ footer {
     } 
 }
 
-@media (max-width: 740px) { 
-    main .satSearch {
+// Tablet .......
+@media (max-width: 745px) { 
 
-        .satInfo { 
-            grid-template-columns: 1fr;
-            gap: 0px;
+    main {
+        padding: 50px 0;
+
+        .introSection {
+            padding-bottom: 20px;
+            margin-bottom: 50px;
         }
+
+        .satSearch {
+            margin-bottom: 50px;
+
+            .satInfo { 
+                grid-template-columns: 1fr;
+                gap: 0px;
+            }
+        }        
     }
-        
+    
     .landOrWater {
         margin-bottom: 30px;
 
@@ -355,7 +356,13 @@ footer {
     }
 }
 
+// Small tablet, large mobile .......
 @media (max-width:550px){ 
+    
+    iframe, p.videoTxt  { 
+        display: none;
+    }
+
     .locationForm { 
         flex-direction: column;
 
@@ -367,17 +374,10 @@ footer {
             padding: 20px 0;
         }
     }
-
-    iframe, p.videoText  { 
-        display: none;
-    }
 }
 
-
+// Mobile .......
 @media (max-width:420px){ 
-    iframe, p.videoText  { 
-        display: none;
-    }
 
     main .satSearch .satDisplay .info {
         width: 250px;

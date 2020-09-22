@@ -25,23 +25,17 @@ spaceApp.findStation = () => {
          id: 25544
       },
    }).then((res) => {
-      // console.log(res);
-      // console.log('I work')
       spaceApp.satDetails(res);
 
       spaceApp.latitude = (res.latitude);
       spaceApp.longitude = (res.longitude); 
 
       spaceApp.locateStation();
-
-      // console.log(spaceApp.latitude);
-      // console.log(spaceApp.longitude);
    });
 }
 
 // Display ISS position info on page
 spaceApp.satDetails = (res) => {
-   console.log(res);
 
    // Credit for code below: https://makitweb.com/convert-unix-timestamp-to-date-time-with-javascript/
    // Convert unix time stamp to formatted date and time 
@@ -57,8 +51,6 @@ spaceApp.satDetails = (res) => {
 
    // Display date time in MM-dd-yyyy h:m:s UTC format
    let formattedTime = month + '-' + day + '-' + year + ' ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2) + ' UTC';
-
-   console.log(formattedTime);
 
       // Timestamp
       const time = $('<p>').addClass('infoTxt').text(formattedTime); 
@@ -108,18 +100,17 @@ spaceApp.locateStation = () => {
          access_token: spaceApp.onWaterKey,
       }
    }).then((res) => {
-      // console.log(res);
-      // console.log('I work alsooooo')
+      
       spaceApp.satLocation(res)
-   }).fail((err) => {
-      // console.log(err);
+
    });
 }
+
 
 // Display whether the ISS is over land or water
 spaceApp.satLocation = (res) => {
    let overWater = (res.water);
-   console.log(overWater)
+   
    if (overWater) {
       $('.img').html('<img src="./assets/water.png" alt= "water icon"></img>');
 
@@ -155,6 +146,8 @@ spaceApp.searchLocation = (location) => {
       spaceApp.userLong = (res.results[0].locations[0].latLng.lat);
 
       const distance = spaceApp.calculateLocation(spaceApp.latitude, spaceApp.longitude, spaceApp.userLat, spaceApp.userLng);
+
+      // Distance convereted from km to mi to match sat positioning info
       const finalDistance = (distance * 0.621371).toFixed(0);
 
       $('.distanceResults').html(`<p>Your location is ${finalDistance} miles from the space station.</p>`).addClass('displayTxt');
@@ -166,7 +159,6 @@ spaceApp.searchLocation = (location) => {
 spaceApp.show = function() {
    $('.satButton').on('click', function(e) {
       e.preventDefault();
-      // console.log('I work too')
 
       spaceApp.findStation();
       
@@ -194,7 +186,6 @@ spaceApp.reset = function () {
 spaceApp.findLocation = function() {
    $('.form').on('submit', function(e) {
       e.preventDefault();
-      console.log('Submit working');
 
       if (spaceApp.latitude === undefined && spaceApp.longitude === undefined) {
          alert('Sorry, you need to find the station position first!');
@@ -202,11 +193,8 @@ spaceApp.findLocation = function() {
       } else {
          // Start location input
          let userLocationInput = $('input').val();
-         console.log(userLocationInput);
    
          spaceApp.searchLocation(userLocationInput);
-   
-         // console.log(spaceApp.calculateLocation);
       }
    });
 }

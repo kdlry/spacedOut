@@ -295,7 +295,7 @@ h3 {
   font-size: calc(2.5rem + 1.5vw);
   letter-spacing: 1px;
   color: #2c6471;
-  padding: 20px 0;
+  padding: 0 0 30px 0;
 }
 
 h4 {
@@ -453,13 +453,13 @@ header div h2 {
 }
 
 main {
-  padding: 50px 0 75px 0;
+  padding: 75px 0;
   background: #e4fbff;
 }
 
 main .introSection {
-  padding-bottom: 25px;
-  margin-bottom: 25px;
+  padding-bottom: 45px;
+  margin-bottom: 75px;
   border-bottom: 3px solid #256e7ea7;
 }
 
@@ -470,10 +470,6 @@ main .introSection p {
 main .introSection iframe {
   width: 480px;
   height: 270px;
-}
-
-main .introSection p.videoText {
-  padding-top: 10px;
 }
 
 main .satButton {
@@ -489,6 +485,7 @@ main .satButton {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 75px;
   border-bottom: 3px solid #256e7ea7;
 }
 
@@ -532,10 +529,6 @@ main .satButton {
   text-align: center;
 }
 
-.landOrWater h2 {
-  margin-bottom: 50px;
-}
-
 .landOrWater .landOrWaterDisplay {
   text-align: center;
   width: 350px;
@@ -550,15 +543,6 @@ main .satButton {
 .landOrWater .landOrWaterDisplay .img {
   width: 40%;
   margin: 0 auto;
-}
-
-.satDistance {
-  height: 100%;
-}
-
-.satDistance h3 {
-  padding: 20px 0;
-  margin: 20px 0;
 }
 
 form {
@@ -650,7 +634,17 @@ footer a:hover, footer a:focus {
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 745px) {
+  main {
+    padding: 50px 0;
+  }
+  main .introSection {
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+  }
+  main .satSearch {
+    margin-bottom: 50px;
+  }
   main .satSearch .satInfo {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -666,6 +660,9 @@ footer a:hover, footer a:focus {
 }
 
 @media (max-width: 550px) {
+  iframe, p.videoTxt {
+    display: none;
+  }
   .locationForm {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -678,16 +675,35 @@ footer a:hover, footer a:focus {
   .locationForm .locationButton {
     padding: 20px 0;
   }
-  iframe, p.videoText {
-    display: none;
-  }
 }
 
 @media (max-width: 420px) {
-  iframe, p.videoText {
-    display: none;
-  }
   main .satSearch .satDisplay .info {
     width: 250px;
   }
+}
+
+a.skip {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden;
+}
+
+a.skip:active, a.skip:focus {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  background: #6f6f6f;
+  padding: 5px;
 }

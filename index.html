@@ -7,6 +7,7 @@
     <title>Space Out</title>
 
     <!-- Style links and scripts .................... -->
+    <!-- CSS ...... -->
     <link rel="stylesheet" href="./styles/style.css">
     
     <!-- Font awesome ...... -->
@@ -25,6 +26,10 @@
 <body>
     <!-- Header .................... -->
     <header>
+
+        <!-- Skip link ...... -->
+        <a class="skip" href="#mainContent" role="link">Skip to main content</a>;  
+
         <div class="wrapper">
             <div>
                 <h1>space out</h1>
@@ -45,11 +50,11 @@
                 <!-- ISS live feed ...... -->
                 <iframe src="https://ustream.tv/embed/9408562" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0"></iframe>
                 
-                <p class="videoText">Note: The ISS feed above may be interrupted at times. <a role="link" href="https://www.nasa.gov/multimedia/nasatv/iss_ustream.html">Source</a></p>
+                <p class="videoTxt">Note: The ISS feed above may be interrupted at times. <a role="link" href="https://www.nasa.gov/multimedia/nasatv/iss_ustream.html">Source</a></p>
             </div>
 
-            <!-- Station positioning .................... -->
-            <section>   
+            <!-- Station position .................... -->
+            <section id="mainContent">   
                 <h3>where's the station now?</h3>
                 <p>Click on the button below to populate the station's current location details and find out if it's over land or water.</p>
 
@@ -63,7 +68,7 @@
                 <div class="satSearch">
                     
                     <!-- Position details container ...... -->
-                    <div class="satPosition">
+                    <div>
                         <h4>Station position</h4>
 
                         <!-- Position labels and outputs ...... -->
@@ -115,8 +120,8 @@
             </section>
 
             <!-- Distance from a location .................... -->
-            <section class="satDistance">
-                <h3>How far is it from a given location?</h3>
+            <section class="locationDistance">
+                <h3>how far is the station from a given location?</h3>
 
                 <!-- Location input and search button ...... -->
                 <form class="form" action="">
@@ -125,7 +130,7 @@
                     <div class="locationForm">
                         
                         <div class="locationInput">
-                            <label for="location">Start Location:</label>
+                            <label for="location">Search Location:</label>
                             <input id="location" type="text" aria-hidden="true" placeholder="123 Main St. Toronto, ON">
                         </div>
                         
