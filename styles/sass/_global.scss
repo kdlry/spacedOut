@@ -8,30 +8,30 @@
 // Headers ....................
 h1 {
     text-transform: uppercase;
-    font-size: calc(3.5rem + 3vw);
+    font-size: calc(3.2rem + 3vw);
     font-family: $secondaryFont;
     letter-spacing: 3px;
-    color: #f9f9f9;
+    color: $xLrgTitleColour;
 }
 
 h2 {
     text-transform: uppercase;
-    font-size: calc(3rem + 2vw);
+    font-size: calc(2.6rem + 2vw);
     letter-spacing: 1px;
-    color: #2c6471;
+    color: $lrgTitleColour;
 }
 
 h3 { 
     text-transform: uppercase;
-    font-size: calc(2.5rem + 1.5vw);
+    font-size: calc(2.5rem + 1vw);
     letter-spacing: 1px;
-    color: #2c6471;
+    color: $medTitleColour;
     padding: 0 0 30px 0;
 }
 
 h4 {
     font-size: calc(2rem + 1vw);
-    color: #1b414a;
+    color: $smlTitleColour;
     padding: 30px 0;
 }
 
@@ -42,13 +42,13 @@ p {
 }
 
 p.satLabel { 
-    font-size: 2.5rem;
+    font-size: calc(1.8rem + 0.8vw);
 }
 
 .introSection p {
     span.highlight {
         font-style: bold;
-        color: #4164FF
+        color: $highlightTxtColour;
     }
 }
 
@@ -63,28 +63,28 @@ p.satLabel {
 }
 
 .satButton {
-    color: #f9f9f9;
-    background: #4164FF;
-    border:  #f9f9f9 2px solid; 
+    background: $satButtonBackground;
+    border: transparent 2px solid; 
+    color: $secondaryTxtColour;
 
     &:hover,
     &:focus {
-        border: #4164FF 2px solid;
-        color: #4164FF;
-        background: #f9f9f9;
+        border: $satButtonBackground 2px solid;
+        color: $satButtonBackground;
+        background: $satButtonHover;
     }
 }
 
 .resetButton {
-    color: #f9f9f9;
-    background: #879dff;
-    border:  #f9f9f9 2px solid; 
+    background: $resetButtonBackground;
+    border: transparent 2px solid; 
+    color: $secondaryTxtColour;
 
     &:hover,
     &:focus {
-        border: #879dff 2px solid;
-        color: #879dff;
-        background: #f9f9f9;
+        border: $resetButtonBackground 2px solid;
+        color: $resetButtonBackground;
+        background: $resetButtonHover;
     }
 }
 
@@ -98,16 +98,16 @@ p.satLabel {
         font-size: 3rem;
 
         .fa-stack-2x {
-            color: darkgray;
+            color: $locationSearchButtonBackground;
         }
         .fa-stack-1x {
-            color: #f9f9f9;
+            color: $locationSearchButtonIcon;
         }
     }
 }
 
 a {
-    color: #B22BFF;
+    color: $linkTxtColour1;
     font-size: 2rem;
     text-decoration: underline;
 }
@@ -116,21 +116,21 @@ a {
 form {
     label {
         font-size: 2.5rem;
-        color: #1b414a;
+        color: $smlTitleColour;
     }
 
     input{
-        background: #f4feff;
+        background: $inputBackground;
         width: 400px;
         padding: 10px;
         font-size: 1.8rem;
         line-height: 30px;
         letter-spacing: 2px;
         border: none;
-        border-bottom: grey 2px solid;
+        border-bottom: 2px solid $locationSearchBorder;
 
         &::placeholder {
-            color: #bdbdbd;
+            color: $placeholderTxtColour;
             font-size: 1.8rem;
             line-height: 30px;
             letter-spacing: 2px;
@@ -141,7 +141,7 @@ form {
 // Header styles ....................
 header {
     height: 50vh;
-    background: #43adc4a7;
+    background: $headerBackground;
         
     div {
         height: 100%;
@@ -151,7 +151,7 @@ header {
 
         h1 {
             align-self: flex-end;
-            border-bottom: 3px solid #f9f9f9;
+            border-bottom: 3px solid $headerBorder;
         }
         h2 { 
             align-self: flex-end;
@@ -162,12 +162,17 @@ header {
 // Main styles ....................
 main {
     padding: 75px 0;
-    background: #e4fbff;
+    background: $mainBackground;
 
     .introSection {
-        padding-bottom: 45px;
+        display: flex;
+        padding-bottom: 20px;
         margin-bottom: 75px;
-        border-bottom: 3px solid #256e7ea7;
+        border-bottom: 3px solid $mainBorder;
+
+        .introTxt {
+            padding-right: 100px;
+        }
 
         p {
             padding-bottom: 30px;
@@ -190,7 +195,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 75px;
-    border-bottom: 3px solid #256e7ea7;    
+    border-bottom: 3px solid $mainBorder;    
     
     .satInfo {
         display: grid;
@@ -206,21 +211,22 @@ main {
 
         p {
             padding-bottom: 10px;
-            
+            color: $satLabelTxtColour;
         }
 
         .info {
             width: 300px;
-            padding: 20px 20px 20px 0;
-            border-bottom: 2px #545454 solid;
+            padding: 10px 10px 10px 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid $satInfoBorder;
         }
     }
 }
 
 // Land or water styles .......
 .landOrWater {
-    max-width:400px;
-    width: 400px;
+    max-width:450px;
+    width: 450px;
     flex-direction: column;
     text-align: center;
 
@@ -266,20 +272,20 @@ form {
 
 // Footer styles ....................
 footer {
-    background: #545454;
+    background: $footerBackground;
     padding: 20px 0;
 
     p {
         font-size: 1.8rem;
-        color: #f9f9f9;
+        color: $secondaryTxtColour;
         text-align: center;
     }
 
     a {
-        color: #ea593e;
+        color: $linkTxtColour2;
 
         &:hover, &:focus {
-            border-bottom: #ea593e dotted 2px;
+            border-bottom: 1px solid $linkTxtColour2;
         }
     }
 }
@@ -289,12 +295,13 @@ footer {
     display: none;
 }
 
-.satDisplay .info p.infoTxt {
-    size: 1.8rem;
+main .satDisplay .info p.infoTxt {
+    color: $dynamicTxtColour;
+    font-size: 1.8rem;
 }
 
 .displayTxt {
-    color: #B22BFF;
+    color: $dynamicTxtColour;
     font-size: 3rem;
     padding-top: 25px;
 }
@@ -302,7 +309,7 @@ footer {
 
 // Media queries ....................
 // Desktop .......
-@media (max-width: 1234px) { 
+@media (max-width: 1294px) { 
 
     .satSearch {
         flex-direction: column;
@@ -324,6 +331,20 @@ footer {
         }
     } 
 }
+
+// Small desktop .......
+@media (max-width: 1000px) { 
+
+    main .introSection {
+        flex-direction: column;
+
+        .introTxt {
+            padding-right: 0px;
+        }
+    }
+}
+
+
 
 // Tablet .......
 @media (max-width: 745px) { 
@@ -379,6 +400,9 @@ footer {
 // Mobile .......
 @media (max-width:420px){ 
 
+    header {
+        height: 40vh;
+    }
     main .satSearch .satDisplay .info {
         width: 250px;
     }

@@ -46,8 +46,8 @@ spaceApp.satDetails = (res) => {
    let month = months_arr[date.getMonth()];
    let day = date.getDate();
    let hours = date.getHours();
-   let minutes = "0" + date.getMinutes();
-   let seconds = "0" + date.getSeconds();
+   let minutes = '0' + date.getMinutes();
+   let seconds = '0' + date.getSeconds();
 
    // Display date time in MM-dd-yyyy h:m:s UTC format
    let formattedTime = month + '-' + day + '-' + year + ' ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2) + ' UTC';
@@ -59,31 +59,31 @@ spaceApp.satDetails = (res) => {
       $('#satDisplay1').append(info1);
       
       // Altitude
-      const alt = $('<p>').text(res.altitude.toFixed(3));
+      const alt = $('<p>').addClass('infoTxt').text(res.altitude.toFixed(3));
       const info2 = $('.info2').html(alt);
 
       $('#satDisplay2').append(info2);
       
       // Latitiude
-      const lat = $('<p>').text(res.latitude.toFixed(6));
+      const lat = $('<p>').addClass('infoTxt').text(res.latitude.toFixed(6));
       const info3 = $('.info3').html(lat);
 
       $('#satDisplay3').append(info3);
       
       // Longitude
-      const long = $('<p>').text(res.longitude.toFixed(6));
+      const long = $('<p>').addClass('infoTxt').text(res.longitude.toFixed(6));
       const info4 = $('.info4').html(long);
 
       $('#satDisplay4').append(info4);
       
       // Visibility
-      const vis = $('<p>').text(res.visibility);
+      const vis = $('<p>').addClass('infoTxt').text(res.visibility);
       const info5 = $('.info5').html(vis);
 
       $('#satDisplay5').append(info5);
       
       // Velocity
-      const veloc = $('<p>').text(res.velocity.toFixed(3));
+      const veloc = $('<p>').addClass('infoTxt').text(res.velocity.toFixed(3));
       const info6 = $('.info6').html(veloc);
 
       $('#satDisplay6').append(info6);
@@ -183,11 +183,13 @@ spaceApp.findLocation = function() {
    $('.form').on('submit', function(e) {
       e.preventDefault();
 
+      // Checks to see if lat/long populated for station position
       if (spaceApp.latitude === undefined && spaceApp.longitude === undefined) {
-         alert('Sorry, you need to find the station position first!');
+         alert('Sorry, you need to find the station position first');
          $('input').val('');
+
       } else {
-         // Start location input
+         // Search location input
          let userLocationInput = $('input').val();
    
          spaceApp.searchLocation(userLocationInput);
@@ -196,7 +198,7 @@ spaceApp.findLocation = function() {
 }
 
 // Credit for code below: https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
-// This script calculates great-circle distances between the two coordinates – that is, the shortest distance over the earth’s surface – using the ‘Haversine’ formula
+// Calculates great-circle distance between a set of coordinates – that is, the shortest distance over the earth’s surface – using the ‘Haversine’ formula
 spaceApp.calculateLocation = function(lat1, lon1, lat2, lon2) {
    let R = 6371; // Radius of the earth in km
    let dLat = spaceApp.deg2rad(lat2 - lat1);  // spaceApp.deg2rad below

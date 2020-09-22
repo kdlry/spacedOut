@@ -242,6 +242,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
+  color: #636363;
 }
 
 body,
@@ -277,7 +278,7 @@ button {
 
 h1 {
   text-transform: uppercase;
-  font-size: calc(3.5rem + 3vw);
+  font-size: calc(3.2rem + 3vw);
   font-family: "Space Mono", monospace;
   letter-spacing: 3px;
   color: #f9f9f9;
@@ -285,22 +286,22 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  font-size: calc(3rem + 2vw);
+  font-size: calc(2.6rem + 2vw);
   letter-spacing: 1px;
-  color: #2c6471;
+  color: #3d5698;
 }
 
 h3 {
   text-transform: uppercase;
-  font-size: calc(2.5rem + 1.5vw);
+  font-size: calc(2.5rem + 1vw);
   letter-spacing: 1px;
-  color: #2c6471;
+  color: #5d92e1;
   padding: 0 0 30px 0;
 }
 
 h4 {
   font-size: calc(2rem + 1vw);
-  color: #1b414a;
+  color: #2a468e;
   padding: 30px 0;
 }
 
@@ -310,12 +311,12 @@ p {
 }
 
 p.satLabel {
-  font-size: 2.5rem;
+  font-size: calc(1.8rem + 0.8vw);
 }
 
 .introSection p span.highlight {
   font-style: bold;
-  color: #4164FF;
+  color: #7790ff;
 }
 
 .satButton,
@@ -328,26 +329,26 @@ p.satLabel {
 }
 
 .satButton {
+  background: #5d85eb;
+  border: transparent 2px solid;
   color: #f9f9f9;
-  background: #4164FF;
-  border: #f9f9f9 2px solid;
 }
 
 .satButton:hover, .satButton:focus {
-  border: #4164FF 2px solid;
-  color: #4164FF;
+  border: #5d85eb 2px solid;
+  color: #5d85eb;
   background: #f9f9f9;
 }
 
 .resetButton {
+  background: #849fe4;
+  border: transparent 2px solid;
   color: #f9f9f9;
-  background: #879dff;
-  border: #f9f9f9 2px solid;
 }
 
 .resetButton:hover, .resetButton:focus {
-  border: #879dff 2px solid;
-  color: #879dff;
+  border: #849fe4 2px solid;
+  color: #849fe4;
   background: #f9f9f9;
 }
 
@@ -365,7 +366,7 @@ p.satLabel {
 }
 
 .locationButton span .fa-stack-2x {
-  color: darkgray;
+  color: #9d9d9d;
 }
 
 .locationButton span .fa-stack-1x {
@@ -373,50 +374,50 @@ p.satLabel {
 }
 
 a {
-  color: #B22BFF;
+  color: #6e62ed;
   font-size: 2rem;
   text-decoration: underline;
 }
 
 form label {
   font-size: 2.5rem;
-  color: #1b414a;
+  color: #2a468e;
 }
 
 form input {
-  background: #f4feff;
+  background: #f5faff;
   width: 400px;
   padding: 10px;
   font-size: 1.8rem;
   line-height: 30px;
   letter-spacing: 2px;
   border: none;
-  border-bottom: grey 2px solid;
+  border-bottom: 2px solid #545454;
 }
 
 form input::-webkit-input-placeholder {
-  color: #bdbdbd;
+  color: #939393;
   font-size: 1.8rem;
   line-height: 30px;
   letter-spacing: 2px;
 }
 
 form input:-ms-input-placeholder {
-  color: #bdbdbd;
+  color: #939393;
   font-size: 1.8rem;
   line-height: 30px;
   letter-spacing: 2px;
 }
 
 form input::-ms-input-placeholder {
-  color: #bdbdbd;
+  color: #939393;
   font-size: 1.8rem;
   line-height: 30px;
   letter-spacing: 2px;
 }
 
 form input::placeholder {
-  color: #bdbdbd;
+  color: #939393;
   font-size: 1.8rem;
   line-height: 30px;
   letter-spacing: 2px;
@@ -424,7 +425,7 @@ form input::placeholder {
 
 header {
   height: 50vh;
-  background: #43adc4a7;
+  background: #7c9ec9;
 }
 
 header div {
@@ -454,13 +455,20 @@ header div h2 {
 
 main {
   padding: 75px 0;
-  background: #e4fbff;
+  background: #f0f7ff;
 }
 
 main .introSection {
-  padding-bottom: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 20px;
   margin-bottom: 75px;
-  border-bottom: 3px solid #256e7ea7;
+  border-bottom: 3px solid #d8e2fa;
+}
+
+main .introSection .introTxt {
+  padding-right: 100px;
 }
 
 main .introSection p {
@@ -486,7 +494,7 @@ main .satButton {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 75px;
-  border-bottom: 3px solid #256e7ea7;
+  border-bottom: 3px solid #d8e2fa;
 }
 
 .satSearch .satInfo {
@@ -511,17 +519,19 @@ main .satButton {
 
 .satSearch .satDisplay p {
   padding-bottom: 10px;
+  color: #303030;
 }
 
 .satSearch .satDisplay .info {
   width: 300px;
-  padding: 20px 20px 20px 0;
-  border-bottom: 2px #545454 solid;
+  padding: 10px 10px 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #545454;
 }
 
 .landOrWater {
-  max-width: 400px;
-  width: 400px;
+  max-width: 450px;
+  width: 450px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -580,7 +590,7 @@ form .locationInput input {
 }
 
 footer {
-  background: #545454;
+  background: #3f3f3f;
   padding: 20px 0;
 }
 
@@ -595,24 +605,25 @@ footer a {
 }
 
 footer a:hover, footer a:focus {
-  border-bottom: #ea593e dotted 2px;
+  border-bottom: 1px solid #ea593e;
 }
 
 .hide {
   display: none;
 }
 
-.satDisplay .info p.infoTxt {
-  size: 1.8rem;
+main .satDisplay .info p.infoTxt {
+  color: #0073ff;
+  font-size: 1.8rem;
 }
 
 .displayTxt {
-  color: #B22BFF;
+  color: #0073ff;
   font-size: 3rem;
   padding-top: 25px;
 }
 
-@media (max-width: 1234px) {
+@media (max-width: 1294px) {
   .satSearch {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -631,6 +642,18 @@ footer a:hover, footer a:focus {
   }
   .landOrWater .landOrWaterDisplay {
     margin: 15px 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  main .introSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .introSection .introTxt {
+    padding-right: 0px;
   }
 }
 
@@ -678,6 +701,9 @@ footer a:hover, footer a:focus {
 }
 
 @media (max-width: 420px) {
+  header {
+    height: 40vh;
+  }
   main .satSearch .satDisplay .info {
     width: 250px;
   }

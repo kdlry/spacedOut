@@ -1,10 +1,55 @@
-// Fonts & Font Colors ....................
+// Background colours ....................
+$headerBackground: #7c9ec9;
+$mainBackground: #f0f7ff;
+$footerBackground: #3f3f3f;
 
-$primaryFont:'Roboto', sans-serif;
-$secondaryFont:'Space Mono', monospace;
+
+// Fonts and font colours ....................
+// Fonts ........
+$primaryFont: 'Roboto', sans-serif;
+$secondaryFont: 'Space Mono', monospace;
+
+// Font colours ........
+$xLrgTitleColour: #f9f9f9;
+$lrgTitleColour: #3d5698;
+$medTitleColour: #5d92e1;
+$smlTitleColour: #2a468e;
+
+$primaryTxtColour: #636363;
+$secondaryTxtColour: #f9f9f9;
+$highlightTxtColour: #7790ff;
+$satLabelTxtColour: #303030;
+$dynamicTxtColour: #0073ff;
+
+
+// Borders ....................
+$headerBorder: #f9f9f9;
+$mainBorder: #d8e2fa;
+$satInfoBorder: #545454;
+$locationSearchBorder: #545454;
+
+
+// Form, button and link colours ....................
+// Sat button ........
+$satButtonBackground: #5d85eb;
+$satButtonHover: #f9f9f9;
+
+// Reset button ........
+$resetButtonBackground: #849fe4;
+$resetButtonHover: #f9f9f9;
+
+// Location search ........
+$inputBackground: #f5faff;
+$placeholderTxtColour: #939393;
+$locationSearchButtonBackground: #9d9d9d;
+$locationSearchButtonIcon: #f9f9f9;
+
+// Links ........
+$linkTxtColour1: #6e62ed;
+$linkTxtColour2: #ea593e;
+
 
 // Import partials ....................
-
 @import "setup";
 @import "global";
 
