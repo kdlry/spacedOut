@@ -1,8 +1,7 @@
-// Name spaces
+// Name spacing
 const spaceApp = {};
 
 // API properties + global variables
-
 spaceApp.onWaterKey = 'EkuV5rQoh2edgP-RgG-B';
 spaceApp.mapquestKey = 'rNUBvav2dEGGss4WVvHK64tVGGygn3zB';
 
@@ -15,7 +14,8 @@ spaceApp.longitude = undefined;
 spaceApp.userLat = 0;
 spaceApp.userLng = 0;
 
-// API call
+// API call - Where is the ISS
+// https://wheretheiss.at/
 spaceApp.findStation = () => {
    $.ajax({
       url: spaceApp.issCoordEndPoint,
@@ -39,7 +39,7 @@ spaceApp.findStation = () => {
    });
 }
 
-// Function that displays ISS position info on page
+// Display ISS position info on page
 spaceApp.satDetails = (res) => {
    console.log(res);
 
@@ -97,6 +97,8 @@ spaceApp.satDetails = (res) => {
       $('#satDisplay6').append(info6);
 }
 
+// API call - On Water
+// https://onwater.io/
 spaceApp.locateStation = () => {
    $.ajax({
       url: `${spaceApp.landOrWaterEndPoint}${spaceApp.latitude},${spaceApp.longitude}`,
@@ -114,6 +116,7 @@ spaceApp.locateStation = () => {
    });
 }
 
+// Display whether the ISS is over land or water
 spaceApp.satLocation = (res) => {
    let overWater = (res.water);
    console.log(overWater)
@@ -135,6 +138,8 @@ spaceApp.satLocation = (res) => {
    }
 }
 
+// API call - Mapquest, Geocoding
+// https://developer.mapquest.com/documentation/geocoding-api/
 spaceApp.searchLocation = (location) => {
    $.ajax({
       url: spaceApp.locationEndPoint,
@@ -157,6 +162,7 @@ spaceApp.searchLocation = (location) => {
    });
 }
 
+// Click event on find ISS info button 
 spaceApp.show = function() {
    $('.satButton').on('click', function(e) {
       e.preventDefault();
@@ -167,7 +173,7 @@ spaceApp.show = function() {
    });
 }
 
-// Clear page
+// Click event on reset button - clears all output data from the page
 spaceApp.reset = function () {
    $('.resetButton').on('click', function() {
       
@@ -184,6 +190,7 @@ spaceApp.reset = function () {
    });
 }
 
+// Click event on location search button 
 spaceApp.findLocation = function() {
    $('.form').on('submit', function(e) {
       e.preventDefault();
@@ -204,8 +211,8 @@ spaceApp.findLocation = function() {
    });
 }
 
-// https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
-
+// Credit for code below: https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+// This script calculates great-circle distances between the two coordinates – that is, the shortest distance over the earth’s surface – using the ‘Haversine’ formula
 spaceApp.calculateLocation = function(lat1, lon1, lat2, lon2) {
    let R = 6371; // Radius of the earth in km
    let dLat = spaceApp.deg2rad(lat2 - lat1);  // spaceApp.deg2rad below
@@ -223,7 +230,6 @@ spaceApp.calculateLocation = function(lat1, lon1, lat2, lon2) {
 spaceApp.deg2rad = function(deg) {
    return deg * (Math.PI / 180)
 }
-   
 
 // Initializing functions
 spaceApp.init = function() {

@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Out</title>
 
+    <!-- Style links and scripts .................... -->
     <link rel="stylesheet" href="./styles/style.css">
+    
+    <!-- Font awesome ...... -->
     <script src="https://kit.fontawesome.com/ad4f31f59a.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Fonts ...... -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon ...... -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -45,12 +56,17 @@
                 <!-- Station search button ...... -->
                 <button class="satButton" type="submit">Let's find out!</button>
                 
+                <!-- Reset button ...... -->
+                <button class="resetButton" type="reset">Reset</button>
+                
                 <!-- Station results ...... -->
                 <div class="satSearch">
                     
-                    <!-- Position details display ...... -->
+                    <!-- Position details container ...... -->
                     <div class="satPosition">
                         <h4>Station position</h4>
+
+                        <!-- Position labels and outputs ...... -->
                         <div class="satInfo">
                             <div class="satDisplay" id="satDisplay1">
                                 <p class="satLabel">Timestamp:</p>
@@ -87,25 +103,27 @@
                     <!-- Land or water display ...... -->
                     <div class="landOrWater">
                         <h4>Is it over land or water?</h4>
+
+                        <!-- JS Output ...... -->
                         <div class="landOrWaterDisplay">
                             <div class="txt"></div>
                             <div class="img"></div>
                         </div>
                     </div>
+                
                 </div>
-                    
-
-                <button class="resetButton" type="reset">Reset</button>
-
             </section>
 
             <!-- Distance from a location .................... -->
             <section class="satDistance">
                 <h3>How far is it from a given location?</h3>
 
-                <!-- User location input ...... -->
+                <!-- Location input and search button ...... -->
                 <form class="form" action="">
+
+                    <!-- Location input ...... -->
                     <div class="locationForm">
+                        
                         <div class="locationInput">
                             <label for="location">Start Location:</label>
                             <input id="location" type="text" aria-hidden="true" placeholder="123 Main St. Toronto, ON">
@@ -120,10 +138,12 @@
                                 </span>
                             </button>
                         </div>    
+                    
                     </div>
-                    <!-- Location input ...... -->
                 </form>
+                <p>Tip: You can search by province, city, address or postal code </p>
 
+                <!-- JS Output ...... -->
                 <div class="distanceResults"></div>
             </section>
 

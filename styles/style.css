@@ -241,11 +241,14 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
 }
 
 body,
 h1,
 h2,
+h3,
+h4,
 p,
 form {
   margin: 0;
@@ -262,6 +265,10 @@ img {
   display: block;
 }
 
+button {
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1250px;
   width: 85%;
@@ -270,38 +277,40 @@ img {
 
 h1 {
   text-transform: uppercase;
-  font-size: 7rem;
+  font-size: calc(3.5rem + 3vw);
   font-family: "Space Mono", monospace;
+  letter-spacing: 3px;
   color: #f9f9f9;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 4rem;
-  font-family: "Roboto", sans-serif;
+  font-size: calc(3rem + 2vw);
+  letter-spacing: 1px;
   color: #2c6471;
-  margin-top: 20px;
 }
 
 h3 {
   text-transform: uppercase;
-  font-size: 4rem;
-  font-family: "Roboto", sans-serif;
+  font-size: calc(2.5rem + 1.5vw);
+  letter-spacing: 1px;
   color: #2c6471;
+  padding: 20px 0;
 }
 
 h4 {
-  font-size: 2.5rem;
-  font-family: "Roboto", sans-serif;
+  font-size: calc(2rem + 1vw);
   color: #1b414a;
+  padding: 30px 0;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
 }
 
 p.satLabel {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .introSection p span.highlight {
@@ -311,26 +320,38 @@ p.satLabel {
 
 .satButton,
 .resetButton {
-  color: #f9f9f9;
   font-size: 2rem;
-  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   border: none;
-  background: #4164FF;
+  border-radius: 10px;
   padding: 15px 15px;
+}
+
+.satButton {
+  color: #f9f9f9;
+  background: #4164FF;
   border: #f9f9f9 2px solid;
 }
 
-.satButton:hover, .satButton:focus,
-.resetButton:hover,
-.resetButton:focus {
+.satButton:hover, .satButton:focus {
   border: #4164FF 2px solid;
   color: #4164FF;
   background: #f9f9f9;
 }
 
+.resetButton {
+  color: #f9f9f9;
+  background: #879dff;
+  border: #f9f9f9 2px solid;
+}
+
+.resetButton:hover, .resetButton:focus {
+  border: #879dff 2px solid;
+  color: #879dff;
+  background: #f9f9f9;
+}
+
 .locationButton {
-  font-family: "Roboto", sans-serif;
   border: none;
   background: none;
   -ms-flex-item-align: center;
@@ -340,7 +361,7 @@ p.satLabel {
 }
 
 .locationButton span {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .locationButton span .fa-stack-2x {
@@ -352,17 +373,19 @@ p.satLabel {
 }
 
 a {
-  color: B22BFF;
+  color: #B22BFF;
   font-size: 2rem;
   text-decoration: underline;
 }
 
 form label {
-  font-size: 2rem;
-  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  color: #1b414a;
 }
 
 form input {
+  background: #f4feff;
+  width: 400px;
   padding: 10px;
   font-size: 1.8rem;
   line-height: 30px;
@@ -374,7 +397,6 @@ form input {
 form input::-webkit-input-placeholder {
   color: #bdbdbd;
   font-size: 1.8rem;
-  font-family: "Roboto", sans-serif;
   line-height: 30px;
   letter-spacing: 2px;
 }
@@ -382,7 +404,6 @@ form input::-webkit-input-placeholder {
 form input:-ms-input-placeholder {
   color: #bdbdbd;
   font-size: 1.8rem;
-  font-family: "Roboto", sans-serif;
   line-height: 30px;
   letter-spacing: 2px;
 }
@@ -390,7 +411,6 @@ form input:-ms-input-placeholder {
 form input::-ms-input-placeholder {
   color: #bdbdbd;
   font-size: 1.8rem;
-  font-family: "Roboto", sans-serif;
   line-height: 30px;
   letter-spacing: 2px;
 }
@@ -398,13 +418,8 @@ form input::-ms-input-placeholder {
 form input::placeholder {
   color: #bdbdbd;
   font-size: 1.8rem;
-  font-family: "Roboto", sans-serif;
   line-height: 30px;
   letter-spacing: 2px;
-}
-
-form input {
-  width: 400px;
 }
 
 header {
@@ -429,7 +444,7 @@ header div {
 header div h1 {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-bottom: 2px solid #aaa;
+  border-bottom: 3px solid #f9f9f9;
 }
 
 header div h2 {
@@ -439,10 +454,17 @@ header div h2 {
 
 main {
   padding: 50px 0 75px 0;
+  background: #e4fbff;
+}
+
+main .introSection {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #256e7ea7;
 }
 
 main .introSection p {
-  padding-bottom: 25px;
+  padding-bottom: 30px;
 }
 
 main .introSection iframe {
@@ -450,11 +472,15 @@ main .introSection iframe {
   height: 270px;
 }
 
-main .satButton {
-  margin-top: 25px;
+main .introSection p.videoText {
+  padding-top: 10px;
 }
 
-main .satSearch {
+main .satButton {
+  margin: 40px 25px 40px 0;
+}
+
+.satSearch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,18 +489,19 @@ main .satSearch {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-bottom: 3px solid #256e7ea7;
 }
 
-main .satSearch .satInfo {
+.satSearch .satInfo {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 50px;
   padding-bottom: 25px;
 }
 
-main .satSearch .satDisplay {
+.satSearch .satDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,18 +512,14 @@ main .satSearch .satDisplay {
   margin-bottom: 20px;
 }
 
-main .satSearch .satDisplay p {
+.satSearch .satDisplay p {
   padding-bottom: 10px;
 }
 
-main .satSearch .satDisplay .info {
-  width: 250px;
+.satSearch .satDisplay .info {
+  width: 300px;
   padding: 20px 20px 20px 0;
   border-bottom: 2px #545454 solid;
-}
-
-main .resetButton {
-  margin-bottom: 30px;
 }
 
 .landOrWater {
@@ -517,7 +540,6 @@ main .resetButton {
   text-align: center;
   width: 350px;
   height: 250px;
-  padding: 20px 0;
   margin: 100px auto;
 }
 
@@ -539,7 +561,7 @@ main .resetButton {
   margin: 20px 0;
 }
 
-.satDistance form {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -549,13 +571,13 @@ main .resetButton {
           flex-direction: column;
 }
 
-.satDistance form .locationForm {
+form .locationForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.satDistance form .locationInput {
+form .locationInput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -565,11 +587,11 @@ main .resetButton {
           flex-direction: column;
 }
 
-.satDistance form .locationInput label {
+form .locationInput label {
   padding-right: 10px;
 }
 
-.satDistance form .locationInput input {
+form .locationInput input {
   margin: 15px 0;
 }
 
@@ -597,7 +619,7 @@ footer a:hover, footer a:focus {
 }
 
 .satDisplay .info p.infoTxt {
-  size: 1.6rem;
+  size: 1.8rem;
 }
 
 .displayTxt {
@@ -606,15 +628,12 @@ footer a:hover, footer a:focus {
   padding-top: 25px;
 }
 
-@media (max-width: 1094px) {
+@media (max-width: 1234px) {
   .satSearch {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .satSearch .resetButton {
     margin: 0 auto;
@@ -623,6 +642,12 @@ footer a:hover, footer a:focus {
         -ms-flex-align: center;
             align-items: center;
   }
+  .landOrWater h4 {
+    text-align: start;
+  }
+  .landOrWater .landOrWaterDisplay {
+    margin: 15px 0;
+  }
 }
 
 @media (max-width: 740px) {
@@ -630,6 +655,13 @@ footer a:hover, footer a:focus {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: 0px;
+  }
+  .landOrWater {
+    margin-bottom: 30px;
+  }
+  .landOrWater .landOrWaterDisplay {
+    width: 250px;
+    height: 150px;
   }
 }
 
@@ -640,10 +672,22 @@ footer a:hover, footer a:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .locationForm input {
+    width: 275px;
+  }
+  .locationForm .locationButton {
+    padding: 20px 0;
+  }
+  iframe, p.videoText {
+    display: none;
+  }
 }
 
 @media (max-width: 420px) {
-  iframe, .videoText {
+  iframe, p.videoText {
     display: none;
+  }
+  main .satSearch .satDisplay .info {
+    width: 250px;
   }
 }

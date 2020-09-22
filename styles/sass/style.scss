@@ -1,3 +1,9 @@
+// Fonts & Font Colors ....................
+
+$primaryFont:'Roboto', sans-serif;
+$secondaryFont:'Space Mono', monospace;
+
+// Import partials ....................
+
 @import "setup";
-@import "variables";
 @import "global";

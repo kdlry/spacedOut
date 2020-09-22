@@ -8,39 +8,41 @@
 // Headers ....................
 h1 {
     text-transform: uppercase;
-    font-size: 7rem;
-    font-family: $primaryFont;
+    font-size: calc(3.5rem + 3vw);
+    font-family: $secondaryFont;
+    letter-spacing: 3px;
     color: #f9f9f9;
 }
 
 h2 {
     text-transform: uppercase;
-    font-size: 4rem;
-    font-family: $secondaryFont;
+    font-size: calc(3rem + 2vw);
+    letter-spacing: 1px;
     color: #2c6471;
-    margin-top: 20px;
 }
 
 h3 { 
     text-transform: uppercase;
-    font-size: 4rem;
-    font-family: $secondaryFont;
+    font-size: calc(2.5rem + 1.5vw);
+    letter-spacing: 1px;
     color: #2c6471;
+    padding: 20px 0;
 }
 
 h4 {
-    font-size: 2.5rem;
-    font-family: $secondaryFont;
+    font-size: calc(2rem + 1vw);
     color: #1b414a;
+    padding: 30px 0;
 }
 
 // Text ....................
 p {
-    font-family: $secondaryFont;
+    letter-spacing: 1px;
+    line-height: 25px;
 }
 
 p.satLabel { 
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .introSection p {
@@ -50,35 +52,50 @@ p.satLabel {
     }
 }
 
-// Links, buttons ....................
+// Links and buttons ....................
 .satButton,
 .resetButton {
-    color: #f9f9f9;
     font-size: 2rem;
-    font-family:$secondaryFont;
     text-transform: uppercase;
     border: none;
-    background: #4164FF;
+    border-radius: 10px;
     padding: 15px 15px;
+}
+
+.satButton {
+    color: #f9f9f9;
+    background: #4164FF;
     border:  #f9f9f9 2px solid; 
 
     &:hover,
     &:focus {
         border: #4164FF 2px solid;
         color: #4164FF;
-        background: #f9f9f9
+        background: #f9f9f9;
+    }
+}
+
+.resetButton {
+    color: #f9f9f9;
+    background: #879dff;
+    border:  #f9f9f9 2px solid; 
+
+    &:hover,
+    &:focus {
+        border: #879dff 2px solid;
+        color: #879dff;
+        background: #f9f9f9;
     }
 }
 
 .locationButton {
-    font-family:$secondaryFont;
     border: none;
     background: none;
     align-self: center;
     height: 100%;
 
     span {
-        font-size: 3.5rem;
+        font-size: 3rem;
 
         .fa-stack-2x {
             color: darkgray;
@@ -90,22 +107,21 @@ p.satLabel {
 }
 
 a {
-    color: B22BFF;
+    color: #B22BFF;
     font-size: 2rem;
     text-decoration: underline;
 }
 
-
-
 // Forms (inputs + labels) ....................
 form {
     label {
-        font-size: 2rem;
-        font-family:$secondaryFont;
-
+        font-size: 2.5rem;
+        color: #1b414a;
     }
 
     input{
+        background: #f4feff;
+        width: 400px;
         padding: 10px;
         font-size: 1.8rem;
         line-height: 30px;
@@ -116,16 +132,11 @@ form {
         &::placeholder {
             color: #bdbdbd;
             font-size: 1.8rem;
-            font-family:$secondaryFont;
             line-height: 30px;
             letter-spacing: 2px;
         }
     }
-    input {
-        width: 400px;
-    }
 }
-
 
 // Header styles ....................
 header {
@@ -140,7 +151,7 @@ header {
 
         h1 {
             align-self: flex-end;
-            border-bottom: 2px solid #aaa
+            border-bottom: 3px solid #f9f9f9;
         }
         h2 { 
             align-self: flex-end;
@@ -151,57 +162,60 @@ header {
 // Main styles ....................
 main {
     padding: 50px 0 75px 0;
+    background: #e4fbff;
 
-    .introSection{
+    .introSection {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 3px solid #256e7ea7;
+
         p {
-            padding-bottom: 25px;
+            padding-bottom: 30px;
         }
         
         iframe { 
             width: 480px;
             height: 270px;
         }
+
+        p.videoText {
+            padding-top: 10px;
+        }
     }
 
     .satButton {
-        margin-top: 25px;
+        margin: 40px 25px 40px 0;
+    }    
+}
+
+.satSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 3px solid #256e7ea7;    
+    
+    .satInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding-bottom: 25px;
     }
 
-    .satSearch {
+    .satDisplay {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;    
-        .satInfo {
-            // width: 550px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding-bottom: 25px;
+        flex-direction: column;
+        margin-bottom: 20px;
 
+        p {
+            padding-bottom: 10px;
+            
         }
-    
-        .satDisplay {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-    
-            p {
-                padding-bottom: 10px;
-                
-            }
-    
-            .info {
-                width: 250px;
-                padding: 20px 20px 20px 0;
-                border-bottom: 2px #545454 solid;
 
-                // align-items: flex-end;
-            }
+        .info {
+            width: 300px;
+            padding: 20px 20px 20px 0;
+            border-bottom: 2px #545454 solid;
         }
-    }
-
-    .resetButton {
-    margin-bottom: 30px;
     }
 }
 
@@ -219,8 +233,8 @@ main {
         text-align: center;
         width: 350px;
         height: 250px;
-        padding: 20px 0;
         margin: 100px auto;
+
         .txt {
             width: 100%
         }
@@ -239,29 +253,27 @@ main {
         padding: 20px 0;
         margin: 20px 0;
     }
+}
 
-    form { 
+form { 
+    display: flex;
+    flex-direction: column;
+    
+    .locationForm { 
+        display: flex;
+    }
+
+    .locationInput { 
         display: flex;
         flex-direction: column;
-        
-        .locationForm { 
-            display: flex;
 
+        label { 
+            padding-right: 10px;
         }
 
-        .locationInput { 
-            display: flex;
-            flex-direction: column;
-
-            label { 
-            
-                padding-right: 10px;
-            }
-            input { 
-                margin: 15px 0;
-            }
+        input { 
+            margin: 15px 0;
         }
-        
     }
 }
 
@@ -291,7 +303,7 @@ footer {
 }
 
 .satDisplay .info p.infoTxt {
-    size: 1.6rem;
+    size: 1.8rem;
 }
 
 .displayTxt {
@@ -299,11 +311,12 @@ footer {
     font-size: 3rem;
     padding-top: 25px;
 }
- 
-@media (max-width: 1094px) { 
-    .satSearch{
+
+
+// Media queries ....................
+@media (max-width: 1234px) { 
+    .satSearch {
         flex-direction: column;
-        align-items: center;
         
         .resetButton { 
             margin: 0 auto;
@@ -311,24 +324,62 @@ footer {
             align-items: center;
         }
     }
+
+    .landOrWater {
+        h4 {
+            text-align: start;
+        }
+
+        .landOrWaterDisplay {
+            margin: 15px 0;
+        }
+    } 
 }
 
 @media (max-width: 740px) { 
-    main .satSearch .satInfo { 
-        grid-template-columns: 1fr;
-        gap: 0px;
+    main .satSearch {
+
+        .satInfo { 
+            grid-template-columns: 1fr;
+            gap: 0px;
+        }
+    }
+        
+    .landOrWater {
+        margin-bottom: 30px;
+
+        .landOrWaterDisplay {
+            width: 250px;
+            height: 150px;
+        }
     }
 }
+
 @media (max-width:550px){ 
     .locationForm { 
         flex-direction: column;
-        
+
+        input {
+            width: 275px;
+        }
+
+        .locationButton {
+            padding: 20px 0;
+        }
+    }
+
+    iframe, p.videoText  { 
+        display: none;
     }
 }
 
 
 @media (max-width:420px){ 
-    iframe, .videoText  { 
+    iframe, p.videoText  { 
         display: none;
+    }
+
+    main .satSearch .satDisplay .info {
+        width: 250px;
     }
 }
