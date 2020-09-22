@@ -311,7 +311,7 @@ p {
 }
 
 p.satLabel {
-  font-size: calc(1.8rem + 0.8vw);
+  font-size: calc(1.8rem + 0.3vw);
 }
 
 .introSection p span.highlight {
