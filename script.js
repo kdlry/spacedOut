@@ -150,9 +150,9 @@ spaceApp.searchLocation = (location) => {
       spaceApp.userLong = (res.results[0].locations[0].latLng.lat);
 
       const distance = spaceApp.calculateLocation(spaceApp.latitude, spaceApp.longitude, spaceApp.userLat, spaceApp.userLng);
-      const finalDistance = distance.toFixed(0);
+      const finalDistance = (distance * 0.621371).toFixed(0);
 
-      $('.distanceResults').html(`<p>Your location is ${finalDistance} km from the space station.</p>`).addClass('displayTxt');
+      $('.distanceResults').html(`<p>Your location is ${finalDistance} miles from the space station.</p>`).addClass('displayTxt');
       
    });
 }

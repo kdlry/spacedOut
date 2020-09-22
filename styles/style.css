@@ -300,6 +300,10 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+p.satLabel {
+  font-size: 2rem;
+}
+
 .introSection p span.highlight {
   font-style: bold;
   color: #4164FF;
@@ -356,8 +360,6 @@ a {
 form label {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
-  padding: 20px 0;
-  margin-bottom: 20px;
 }
 
 form input {
@@ -443,6 +445,11 @@ main .introSection p {
   padding-bottom: 25px;
 }
 
+main .introSection iframe {
+  width: 480px;
+  height: 270px;
+}
+
 main .satButton {
   margin-top: 25px;
 }
@@ -451,18 +458,19 @@ main .satSearch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 main .satSearch .satInfo {
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 30px;
   padding-bottom: 25px;
 }
 
@@ -470,20 +478,20 @@ main .satSearch .satDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
 }
 
 main .satSearch .satDisplay p {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 main .satSearch .satDisplay .info {
   width: 250px;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
   border-bottom: 2px #545454 solid;
 }
 
@@ -492,10 +500,8 @@ main .resetButton {
 }
 
 .landOrWater {
-  width: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 400px;
+  width: 400px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -503,8 +509,16 @@ main .resetButton {
   text-align: center;
 }
 
+.landOrWater h2 {
+  margin-bottom: 50px;
+}
+
 .landOrWater .landOrWaterDisplay {
   text-align: center;
+  width: 350px;
+  height: 250px;
+  padding: 20px 0;
+  margin: 100px auto;
 }
 
 .landOrWater .landOrWaterDisplay .txt {
@@ -516,20 +530,47 @@ main .resetButton {
   margin: 0 auto;
 }
 
-.outputs {
+.satDistance {
   height: 100%;
 }
 
-.outputs h3 {
+.satDistance h3 {
   padding: 20px 0;
   margin: 20px 0;
-  width: 9%;
-  border-bottom: 2px solid #aaa;
 }
 
-.outputs .map img {
-  width: auto;
-  height: 100%;
+.satDistance form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.satDistance form .locationForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.satDistance form .locationInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.satDistance form .locationInput label {
+  padding-right: 10px;
+}
+
+.satDistance form .locationInput input {
+  margin: 15px 0;
 }
 
 footer {
@@ -563,4 +604,46 @@ footer a:hover, footer a:focus {
   color: #B22BFF;
   font-size: 3rem;
   padding-top: 25px;
+}
+
+@media (max-width: 1094px) {
+  .satSearch {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .satSearch .resetButton {
+    margin: 0 auto;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 740px) {
+  main .satSearch .satInfo {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 550px) {
+  .locationForm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  iframe, .videoText {
+    display: none;
+  }
 }

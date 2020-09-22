@@ -39,6 +39,10 @@ p {
     font-family: $secondaryFont;
 }
 
+p.satLabel { 
+    font-size: 2rem;
+}
+
 .introSection p {
     span.highlight {
         font-style: bold;
@@ -98,8 +102,6 @@ form {
     label {
         font-size: 2rem;
         font-family:$secondaryFont;
-        padding: 20px 0;
-        margin-bottom: 20px;
 
     }
 
@@ -154,6 +156,11 @@ main {
         p {
             padding-bottom: 25px;
         }
+        
+        iframe { 
+            width: 480px;
+            height: 270px;
+        }
     }
 
     .satButton {
@@ -162,29 +169,32 @@ main {
 
     .satSearch {
         display: flex;
-        justify-content: space-between;
-    
+        flex-wrap: wrap;
+        justify-content: space-between;    
         .satInfo {
-            width: 100%;
+            // width: 550px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 30px;
             padding-bottom: 25px;
+
         }
     
         .satDisplay {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            margin-bottom: 20px;
     
             p {
-                align-self: flex-end;
-                padding-right: 10px;
+                padding-bottom: 10px;
+                
             }
     
             .info {
                 width: 250px;
-                padding: 20px;
+                padding: 20px 20px 20px 0;
                 border-bottom: 2px #545454 solid;
+
                 // align-items: flex-end;
             }
         }
@@ -196,14 +206,21 @@ main {
 }
 
 .landOrWater {
-    width: 30%;
-    display: flex;
+    max-width:400px;
+    width: 400px;
     flex-direction: column;
     text-align: center;
 
+    h2 { 
+        margin-bottom: 50px;
+    }
+
     .landOrWaterDisplay {
         text-align: center;
-
+        width: 350px;
+        height: 250px;
+        padding: 20px 0;
+        margin: 100px auto;
         .txt {
             width: 100%
         }
@@ -215,28 +232,40 @@ main {
     }
 }
 
-.outputs {
+.satDistance {
     height: 100%;
 
     h3 {
         padding: 20px 0;
         margin: 20px 0;
-        width: 9%;
-        border-bottom: 2px solid #aaa;
-
     }
 
-    .map {
-        // border: #6a888f 2px solid;
+    form { 
+        display: flex;
+        flex-direction: column;
+        
+        .locationForm { 
+            display: flex;
 
-        img {
-            width: auto;
-            height: 100%;;
         }
+
+        .locationInput { 
+            display: flex;
+            flex-direction: column;
+
+            label { 
+            
+                padding-right: 10px;
+            }
+            input { 
+                margin: 15px 0;
+            }
+        }
+        
     }
 }
 
-// Main styles ....................
+// Footer styles ....................
 footer {
     background: #545454;
     padding: 20px 0;
@@ -269,4 +298,37 @@ footer {
     color: #B22BFF;
     font-size: 3rem;
     padding-top: 25px;
+}
+ 
+@media (max-width: 1094px) { 
+    .satSearch{
+        flex-direction: column;
+        align-items: center;
+        
+        .resetButton { 
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 740px) { 
+    main .satSearch .satInfo { 
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+}
+@media (max-width:550px){ 
+    .locationForm { 
+        flex-direction: column;
+        
+    }
+}
+
+
+@media (max-width:420px){ 
+    iframe, .videoText  { 
+        display: none;
+    }
 }

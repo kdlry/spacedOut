@@ -32,9 +32,9 @@
                 <p>The International Space Station (ISS) revolves around the Earth at about <span class="highlight">17,500 mph (~28,000 km/h)</span> resulting in it completing one <span class="highlight">revolution in about 90 minutes</span>, and about <span class="highlight">16 revolutions per day</span>. The ISS rotates about its center of mass at a rate of about 4 degrees per minute so that it will complete a full rotation once per orbit. <a role="link" href="https://www.forbes.com/sites/quora/2017/10/03/how-does-the-iss-travel-around-the-earth/#28877d90141f">Source</a></p>
                 
                 <!-- ISS live feed ...... -->
-                <iframe width="480" height="270" src="https://ustream.tv/embed/9408562" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+                <iframe src="https://ustream.tv/embed/9408562" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0"></iframe>
                 
-                <p>Note: The ISS feed above may be interrupted at times. <a role="link" href="https://www.nasa.gov/multimedia/nasatv/iss_ustream.html">Source</a></p>
+                <p class="videoText">Note: The ISS feed above may be interrupted at times. <a role="link" href="https://www.nasa.gov/multimedia/nasatv/iss_ustream.html">Source</a></p>
             </div>
 
             <!-- Station positioning .................... -->
@@ -53,32 +53,32 @@
                         <h4>Station position</h4>
                         <div class="satInfo">
                             <div class="satDisplay" id="satDisplay1">
-                                <p>Timestamp:</p>
+                                <p class="satLabel">Timestamp:</p>
                                 <div class="info info1"></div>
                             </div>
                             
                             <div class="satDisplay" id="satDisplay2">
-                                <p>Altitude (miles):</p>
+                                <p class="satLabel">Altitude (miles):</p>
                                 <div class="info info2"></div>
                             </div>
                             
                             <div class="satDisplay" id="satDisplay3">
-                                <p>Latitude (dec deg):</p>
+                                <p class="satLabel">Latitude (dec deg):</p>
                                 <div class="info info3"></div>
                             </div>
                             
                             <div class="satDisplay" id="satDisplay4">
-                                <p>Longitude (dec deg):</p>
+                                <p class="satLabel">Longitude (dec deg):</p>
                                 <div class="info info4"></div>
                             </div>
                             
                             <div class="satDisplay" id="satDisplay5">
-                                <p>Visibility:</p>
+                                <p class="satLabel">Visibility:</p>
                                 <div class="info info5"></div>
                             </div>
                             
                             <div class="satDisplay" id="satDisplay6">
-                                <p>Velocity (mph):</p>
+                                <p class="satLabel">Velocity (mph):</p>
                                 <div class="info info6"></div>
                             </div>
                         </div>
@@ -105,22 +105,23 @@
 
                 <!-- User location input ...... -->
                 <form class="form" action="">
-
+                    <div class="locationForm">
+                        <div class="locationInput">
+                            <label for="location">Start Location:</label>
+                            <input id="location" type="text" aria-hidden="true" placeholder="123 Main St. Toronto, ON">
+                        </div>
+                        
+                        <!-- Location search button ...... -->
+                        <div class="searchButton">
+                            <button class="locationButton" type="submit" aria-label="click here to search for a location">
+                                <span class="fa-stack fa-2x" role="img" aria-hidden="true">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </button>
+                        </div>    
+                    </div>
                     <!-- Location input ...... -->
-                    <div class="locationInput">
-                        <label for="location">Start Location:</label>
-                        <input id="location" type="text" aria-hidden="true" placeholder="123 Main St. Toronto, ON">
-                    </div>
-                    
-                    <!-- Location search button ...... -->
-                    <div class="searchButton">
-                        <button class="locationButton" type="submit" aria-label="click here to search for a location">
-                            <span class="fa-stack fa-2x" role="img" aria-hidden="true">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </button>
-                    </div>
                 </form>
 
                 <div class="distanceResults"></div>
