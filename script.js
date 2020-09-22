@@ -99,10 +99,8 @@ spaceApp.locateStation = () => {
       data: {
          access_token: spaceApp.onWaterKey,
       }
-   }).then((res) => {
-      
+   }).then((res) => {      
       spaceApp.satLocation(res)
-
    });
 }
 
@@ -141,7 +139,6 @@ spaceApp.searchLocation = (location) => {
          location: location,
       },
    }).then((res) => {
-
       spaceApp.userLat = (res.results[0].locations[0].latLng.lng);
       spaceApp.userLong = (res.results[0].locations[0].latLng.lat);
 
@@ -151,7 +148,6 @@ spaceApp.searchLocation = (location) => {
       const finalDistance = (distance * 0.621371).toFixed(0);
 
       $('.distanceResults').html(`<p>Your location is ${finalDistance} miles from the space station.</p>`).addClass('displayTxt');
-      
    });
 }
 
