@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Out</title>
+    <title>Spaced Out</title>
 
     <!-- Style links and scripts .................... -->
     <!-- CSS ...... -->
@@ -13,8 +13,11 @@
     <!-- Font awesome ...... -->
     <script src="https://kit.fontawesome.com/ad4f31f59a.js" crossorigin="anonymous"></script>
     
-    <!-- Fonts ...... -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts ...... -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&amily=Fjalla+One&display=swap" rel="stylesheet">
+
+    <!-- Animations ...... -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
     
     <!-- Favicon ...... -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
@@ -32,8 +35,9 @@
 
         <div class="wrapper">
             <div>
-                <h1>space out</h1>
+                <h1>spaced out</h1>
                 <h2>Track the ISS</h2>
+                <a class="navBtn animate__slideInDown" href="#intro" aria-label="Click here to move to the main section"><i class="fas fa-chevron-down"></i></a>
             </div> 
         </div>
     </header>
@@ -43,10 +47,10 @@
         <div class="wrapper">
 
             <!-- Intro section ...... -->
-            <div class="introSection">
+            <div class="introSection" id="intro">
                 <div class="introTxt">
                     <h3>Fun facts</h3>
-                    <p>The International Space Station (ISS) revolves around the Earth at about <span class="highlight">17,500 mph (~28,000 km/h)</span> resulting in it completing one <span class="highlight">revolution in about 90 minutes</span>, and about <span class="highlight">16 revolutions per day</span>. The ISS rotates about its center of mass at a rate of about 4 degrees per minute so that it will complete a full rotation once per orbit. <a role="link" href="https://www.forbes.com/sites/quora/2017/10/03/how-does-the-iss-travel-around-the-earth/#28877d90141f">Source</a></p>
+                    <p>The International Space Station (ISS) revolves around the Earth at about <span class="highlight">17,500 mph (~28,000 km/h)</span> resulting in it completing one <span class="highlight">revolution in about 90 minutes</span>, and about <span class="highlight">16 revolutions per day</span>. The ISS rotates about its center of mass at a rate of about <span class="highlight">4 degrees per minute</span> so that it will complete a full rotation once per orbit. <a role="link" href="https://www.forbes.com/sites/quora/2017/10/03/how-does-the-iss-travel-around-the-earth/#28877d90141f">Source</a></p>
                 </div>
                 
                 <!-- ISS live feed ...... -->
@@ -72,7 +76,7 @@
                 <div class="satSearch">
                     
                     <!-- Position details container ...... -->
-                    <div>
+                    <div class="satPosition">
                         <h4>Station position</h4>
 
                         <!-- Position labels and outputs ...... -->
@@ -161,8 +165,17 @@
 
     <!-- Footer .................... -->
     <footer>
-        <p>Created at <a href="https://junocollege.com/" role="link">Juno College</a></p>
-        <p>Copyright &#169 2020 Juno College of Technology</p>
+        <div class="footerContainer wrapper">
+            <div>
+                <p>Built by Kristen Delorey and Alex Gould</p>
+                <p>Created at <a href="https://junocollege.com/" role="link">Juno College</a></p>
+                <p>Copyright &#169 2020 Juno College of Technology</p>
+            </div>
+    
+            <div>
+                <p>Land + Water Icons | By: Inipagistudio</p>
+            </div>
+        </div>
     </footer>
     
     <!-- JS .................... -->    

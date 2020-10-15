@@ -14,6 +14,24 @@ spaceApp.longitude = undefined;
 spaceApp.userLat = 0;
 spaceApp.userLng = 0;
 
+// Smooth scroll
+// Credit for code below: https://www.codegrepper.com/code-examples/whatever/how+to+create+smooth+scroll+in+html
+spaceApp.smoothScroll = function() {
+   $("a").on('click', function (event) {
+
+      if (this.hash !== "") {
+         event.preventDefault();
+
+         let hash = this.hash;
+         $("html, body").animate({
+            scrollTop: $(hash).offset().top
+         }, 1500, function () {
+            window.location.hash = hash;
+         });
+      }
+   });
+}
+
 // API call - Where is the ISS
 // https://wheretheiss.at/
 spaceApp.findStation = () => {
@@ -50,7 +68,7 @@ spaceApp.satDetails = (res) => {
    let seconds = '0' + date.getSeconds();
 
    // Display date time in MM-dd-yyyy h:m:s UTC format
-   let formattedTime = month + '-' + day + '-' + year + ' ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2) + ' UTC';
+   let formattedTime = month + '-' + day + '-' + year + ' ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2) + ' ET';
 
       // Timestamp
       const time = $('<p>').addClass('infoTxt').text(formattedTime); 
@@ -110,7 +128,7 @@ spaceApp.satLocation = (res) => {
    let overWater = (res.water);
    
    if (overWater) {
-      $('.img').html('<img src="./assets/water.png" alt= "water icon"></img>');
+      $('.img').html('<img src="./assets/water.svg" alt= "water icon"></img>');
 
       let newTxtWater = $('<p>').text('Water').addClass('displayTxt');
       let newTxtWaterAdd = $('.txt').html(newTxtWater);
@@ -118,7 +136,7 @@ spaceApp.satLocation = (res) => {
       $('.landOrWaterDisplay').append(newTxtWaterAdd);      
       
    } else {
-      $('.img').html('<img src="./assets/land.png" alt= "land icon" ></img>');
+      $('.img').html('<img src="./assets/land.svg" alt= "land icon" ></img>');
 
       let newTxtLand = $('<p>').text('Land').addClass('displayTxt');
       let newTxtLandAdd = $('.txt').html(newTxtLand);
@@ -219,6 +237,7 @@ spaceApp.deg2rad = function(deg) {
 
 // Initializing functions
 spaceApp.init = function() {
+   spaceApp.smoothScroll();
    spaceApp.show();
    spaceApp.reset();
    spaceApp.findLocation();

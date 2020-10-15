@@ -243,6 +243,7 @@ body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   color: #636363;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -278,22 +279,22 @@ button {
 
 h1 {
   text-transform: uppercase;
-  font-size: calc(3.2rem + 3vw);
-  font-family: "Space Mono", monospace;
+  font-size: calc(3rem + 2vw);
+  font-family: "Fjalla One", sans-serif;
   letter-spacing: 3px;
   color: #f9f9f9;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: calc(2.6rem + 2vw);
+  font-size: calc(2.4rem + 1.5vw);
   letter-spacing: 1px;
-  color: #3d5698;
+  color: #f7c43a;
 }
 
 h3 {
   text-transform: uppercase;
-  font-size: calc(2.5rem + 1vw);
+  font-size: calc(2rem + 1vw);
   letter-spacing: 1px;
   color: #5d92e1;
   padding: 0 0 30px 0;
@@ -376,7 +377,10 @@ p.satLabel {
 a {
   color: #6e62ed;
   font-size: 2rem;
-  text-decoration: underline;
+}
+
+a:hover, a :focus, a :active {
+  color: #0073ff;
 }
 
 form label {
@@ -424,8 +428,11 @@ form input::placeholder {
 }
 
 header {
-  height: 50vh;
-  background: #7c9ec9;
+  height: 100vh;
+  background: url(../../assets/headerImage.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 header div {
@@ -445,12 +452,26 @@ header div {
 header div h1 {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-bottom: 3px solid #f9f9f9;
 }
 
 header div h2 {
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+header a.navBtn {
+  font-size: 3.5rem;
+  color: #f7c43a;
+  margin-top: 75px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+header a.animate__slideInDown {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 main {
@@ -497,6 +518,10 @@ main .satButton {
   border-bottom: 3px solid #d8e2fa;
 }
 
+.satSearch .satPosition {
+  width: 60%;
+}
+
 .satSearch .satInfo {
   display: -ms-grid;
   display: grid;
@@ -530,20 +555,22 @@ main .satButton {
 }
 
 .landOrWater {
-  max-width: 450px;
-  width: 450px;
+  width: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
 .landOrWater .landOrWaterDisplay {
-  text-align: center;
-  width: 350px;
-  height: 250px;
-  margin: 100px auto;
+  margin: 75px auto;
 }
 
 .landOrWater .landOrWaterDisplay .txt {
@@ -551,7 +578,7 @@ main .satButton {
 }
 
 .landOrWater .landOrWaterDisplay .img {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -594,17 +621,25 @@ footer {
   padding: 20px 0;
 }
 
-footer p {
-  font-size: 1.8rem;
-  color: #f9f9f9;
-  text-align: center;
+.footerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-footer a {
+.footerContainer p {
+  font-weight: 300;
+  color: #f9f9f9;
+}
+
+.footerContainer a {
   color: #ea593e;
 }
 
-footer a:hover, footer a:focus {
+.footerContainer a:hover, .footerContainer a:focus {
   border-bottom: 1px solid #ea593e;
 }
 
@@ -620,7 +655,7 @@ main .satDisplay .info p.infoTxt {
 .displayTxt {
   color: #0073ff;
   font-size: 3rem;
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 @media (max-width: 1294px) {
@@ -630,6 +665,10 @@ main .satDisplay .info p.infoTxt {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .satSearch h4 {
+    text-align: center;
+    padding-bottom: 50px;
+  }
   .satSearch .resetButton {
     margin: 0 auto;
     text-align: center;
@@ -637,11 +676,29 @@ main .satDisplay .info p.infoTxt {
         -ms-flex-align: center;
             align-items: center;
   }
-  .landOrWater h4 {
-    text-align: start;
+  .satSearch .satPosition {
+    width: 100%;
   }
-  .landOrWater .landOrWaterDisplay {
-    margin: 15px 0;
+  .satDisplay .satLabel {
+    text-align: center;
+  }
+  .satDisplay .info {
+    margin: 0 auto;
+  }
+  .satSearch .landOrWater {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .satSearch .landOrWater h4 {
+    text-align: center;
+  }
+  .satSearch .landOrWater .landOrWaterDisplay {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 15px 0 0 0;
+  }
+  .satSearch .landOrWater .landOrWaterDisplay .img {
+    width: 30%;
   }
 }
 
@@ -652,8 +709,27 @@ main .satDisplay .info p.infoTxt {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  main .introSection iframe {
+    width: 450px;
+    height: 250px;
+  }
   main .introSection .introTxt {
     padding-right: 0px;
+  }
+}
+
+@media (max-width: 850px) {
+  header {
+    height: 70vh;
+  }
+  .footerContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footerContainer div:first-child {
+    margin-bottom: 20px;
   }
 }
 
@@ -673,18 +749,18 @@ main .satDisplay .info p.infoTxt {
         grid-template-columns: 1fr;
     gap: 0px;
   }
-  .landOrWater {
-    margin-bottom: 30px;
+  .satSearch .satDisplay .info {
+    width: 80%;
   }
-  .landOrWater .landOrWaterDisplay {
-    width: 250px;
-    height: 150px;
+  .landOrWaterDisplay .img {
+    width: 100%;
   }
 }
 
 @media (max-width: 550px) {
-  iframe, p.videoTxt {
-    display: none;
+  main .introSection iframe {
+    width: 370px;
+    height: 200px;
   }
   .locationForm {
     -webkit-box-orient: vertical;
@@ -701,6 +777,10 @@ main .satDisplay .info p.infoTxt {
 }
 
 @media (max-width: 420px) {
+  main .introSection iframe {
+    width: 270px;
+    height: 150px;
+  }
   header {
     height: 40vh;
   }

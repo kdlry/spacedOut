@@ -8,7 +8,7 @@
 // Headers ....................
 h1 {
     text-transform: uppercase;
-    font-size: calc(3.2rem + 3vw);
+    font-size: calc(3rem + 2vw);
     font-family: $secondaryFont;
     letter-spacing: 3px;
     color: $xLrgTitleColour;
@@ -16,14 +16,14 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    font-size: calc(2.6rem + 2vw);
+    font-size: calc(2.4rem + 1.5vw);
     letter-spacing: 1px;
     color: $lrgTitleColour;
 }
 
 h3 { 
     text-transform: uppercase;
-    font-size: calc(2.5rem + 1vw);
+    font-size: calc(2rem + 1vw);
     letter-spacing: 1px;
     color: $medTitleColour;
     padding: 0 0 30px 0;
@@ -109,7 +109,10 @@ p.satLabel {
 a {
     color: $linkTxtColour1;
     font-size: 2rem;
-    text-decoration: underline;
+
+    &:hover, :focus, :active {
+        color: #0073ff;
+    }
 }
 
 // Forms (inputs + labels) ....................
@@ -140,8 +143,12 @@ form {
 
 // Header styles ....................
 header {
-    height: 50vh;
-    background: $headerBackground;
+    height: 100vh;
+    background: url(../../assets/headerImage.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
         
     div {
         height: 100%;
@@ -151,11 +158,22 @@ header {
 
         h1 {
             align-self: flex-end;
-            border-bottom: 3px solid $headerBorder;
         }
         h2 { 
             align-self: flex-end;
         }
+    }
+
+    a.navBtn {
+        font-size: 3.5rem;
+        color: $iconsColour;
+        margin-top: 75px;
+        align-self: flex-end;
+    }
+
+    a.animate__slideInDown {
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
 }
 
@@ -195,7 +213,11 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 75px;
-    border-bottom: 3px solid $mainBorder;    
+    border-bottom: 3px solid $mainBorder; 
+    
+    .satPosition {
+        width: 60%;
+    }
     
     .satInfo {
         display: grid;
@@ -225,23 +247,21 @@ main {
 
 // Land or water styles .......
 .landOrWater {
-    max-width:450px;
-    width: 450px;
+    width: 40%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 
     .landOrWaterDisplay {
-        text-align: center;
-        width: 350px;
-        height: 250px;
-        margin: 100px auto;
+        margin: 75px auto;
 
         .txt {
             width: 100%
         }
     
         .img {
-            width: 40%;
+            width: 60%;
             margin: 0 auto;
         }
     }
@@ -274,11 +294,14 @@ form {
 footer {
     background: $footerBackground;
     padding: 20px 0;
+}
 
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
     p {
-        font-size: 1.8rem;
+        font-weight: 300;
         color: $secondaryTxtColour;
-        text-align: center;
     }
 
     a {
@@ -288,7 +311,8 @@ footer {
             border-bottom: 1px solid $linkTxtColour2;
         }
     }
-}
+}   
+
 
 // Dynamic JS classes ....................
 .hide {
@@ -303,7 +327,7 @@ main .satDisplay .info p.infoTxt {
 .displayTxt {
     color: $dynamicTxtColour;
     font-size: 3rem;
-    padding-top: 25px;
+    padding-top: 50px;
 }
 
 
@@ -313,6 +337,11 @@ main .satDisplay .info p.infoTxt {
 
     .satSearch {
         flex-direction: column;
+
+        h4 {
+            text-align: center;
+            padding-bottom: 50px;
+        }
         
         .resetButton { 
             margin: 0 auto;
@@ -321,13 +350,39 @@ main .satDisplay .info p.infoTxt {
         }
     }
 
-    .landOrWater {
+    .satSearch .satPosition {
+        width: 100%;
+    }
+
+    .satDisplay {
+        .satLabel {
+            text-align: center;
+        }
+
+        .info {
+            margin: 0 auto;
+        }
+    }
+
+    .satSearch .landOrWater {
+        width: 100%;
+        margin-bottom: 50px;
+
         h4 {
-            text-align: start;
+            text-align: center;
         }
 
         .landOrWaterDisplay {
-            margin: 15px 0;
+            align-content: center;
+            margin: 15px 0 0 0;
+
+            // .txt {
+            //     text-align: left;
+            // }
+
+            .img {
+                width: 30%;
+            }
         }
     } 
 }
@@ -338,8 +393,29 @@ main .satDisplay .info p.infoTxt {
     main .introSection {
         flex-direction: column;
 
+        iframe {
+            width: 450px;
+            height: 250px;
+        }
+
         .introTxt {
             padding-right: 0px;
+        }
+    }
+}
+
+// Small desktop .......
+@media (max-width: 850px) { 
+
+    header {
+        height: 70vh;
+    }
+
+    .footerContainer{
+        flex-direction: column;
+
+        div:first-child {
+            margin-bottom: 20px;
         }
     }
 }
@@ -366,13 +442,14 @@ main .satDisplay .info p.infoTxt {
             }
         }        
     }
-    
-    .landOrWater {
-        margin-bottom: 30px;
 
-        .landOrWaterDisplay {
-            width: 250px;
-            height: 150px;
+    .satSearch .satDisplay .info {
+        width: 80%;
+    }
+
+    .landOrWaterDisplay {
+        .img {
+            width: 100%;
         }
     }
 }
@@ -380,8 +457,9 @@ main .satDisplay .info p.infoTxt {
 // Small tablet, large mobile .......
 @media (max-width:550px){ 
     
-    iframe, p.videoTxt  { 
-        display: none;
+    main .introSection iframe {
+        width: 370px;
+        height: 200px;
     }
 
     .locationForm { 
@@ -400,6 +478,10 @@ main .satDisplay .info p.infoTxt {
 // Mobile .......
 @media (max-width:420px){ 
 
+    main .introSection iframe {
+        width: 270px;
+        height: 150px;
+    }
     header {
         height: 40vh;
     }

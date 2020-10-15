@@ -17,6 +17,7 @@ body {
     font-size: 1.6rem;
     font-family: $primaryFont;
     color: $primaryTxtColour;
+    scroll-behavior: smooth;
 }
 
 body,
