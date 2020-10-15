@@ -429,7 +429,7 @@ form input::placeholder {
 
 header {
   height: 100vh;
-  background: url(./../../assets/headerImage.jpeg);
+  background: url(./../assets/headerImage.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
