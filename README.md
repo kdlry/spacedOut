@@ -1,7 +1,9 @@
-# -Description-
+## Spaced Out
 
-Responsive site built in a paired programming environment with Alex Gould, using jQuery, HTML5, Sass and powered from 3 REST APIs (Where is the ISS at?, On Water and MapQuest). The primary goal is to display real-time positioning information about the International Space Station.
+Built: September 22, 2020\
+Responsive site using jQuery, HTML5, Sass and powered by 3 REST APIs (Where is the ISS at?, On Water and MapQuest)
 
-# -Live Link-
+### Description
+Displays real-time positioning information about the International Space Station.
 
-https://kdlry.github.io/spacedOut/
+<a href="https://kdlry.github.io/spacedOut/"></a>
