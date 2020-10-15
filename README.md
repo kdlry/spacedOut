@@ -6,4 +6,4 @@ Responsive site using jQuery, HTML5, Sass and powered by 3 REST APIs (Where is t
 ### Description
 Displays real-time positioning information about the International Space Station.
 
-<a href="https://kdlry.github.io/spacedOut/"></a>
+<a href="https://kdlry.github.io/spacedOut/">Live Link</a>
