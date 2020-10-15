@@ -296,7 +296,7 @@ h3 {
   text-transform: uppercase;
   font-size: calc(2rem + 1vw);
   letter-spacing: 1px;
-  color: #5d92e1;
+  color: #2e65b8;
   padding: 0 0 30px 0;
 }
 
@@ -429,7 +429,7 @@ form input::placeholder {
 
 header {
   height: 100vh;
-  background: url(../../assets/headerImage.jpeg);
+  background: url(./../../assets/headerImage.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -636,6 +636,7 @@ footer {
 }
 
 .footerContainer a {
+  font-size: 1.6rem;
   color: #ea593e;
 }
 
@@ -773,6 +774,13 @@ main .satDisplay .info p.infoTxt {
   }
   .locationForm .locationButton {
     padding: 20px 0;
+  }
+  footer {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  footer a {
+    font-size: 1.2rem;
   }
 }
 

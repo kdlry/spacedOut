@@ -144,7 +144,7 @@ form {
 // Header styles ....................
 header {
     height: 100vh;
-    background: url(../../assets/headerImage.jpeg);
+    background: url(./../../assets/headerImage.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -305,6 +305,7 @@ footer {
     }
 
     a {
+        font-size: 1.6rem;
         color: $linkTxtColour2;
 
         &:hover, &:focus {
@@ -376,10 +377,6 @@ main .satDisplay .info p.infoTxt {
             align-content: center;
             margin: 15px 0 0 0;
 
-            // .txt {
-            //     text-align: left;
-            // }
-
             .img {
                 width: 30%;
             }
@@ -404,7 +401,7 @@ main .satDisplay .info p.infoTxt {
     }
 }
 
-// Small desktop .......
+// Small desktop x2 .......
 @media (max-width: 850px) { 
 
     header {
@@ -419,8 +416,6 @@ main .satDisplay .info p.infoTxt {
         }
     }
 }
-
-
 
 // Tablet .......
 @media (max-width: 745px) { 
@@ -471,6 +466,15 @@ main .satDisplay .info p.infoTxt {
 
         .locationButton {
             padding: 20px 0;
+        }
+    }
+
+    footer {
+        text-align: center;
+        font-size: 1.2rem;
+
+        a {
+            font-size: 1.2rem;
         }
     }
 }
