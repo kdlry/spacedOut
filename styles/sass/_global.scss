@@ -327,7 +327,8 @@ main .satDisplay .info p.infoTxt {
 
 .displayTxt {
     color: $dynamicTxtColour;
-    font-size: 3rem;
+    font-size: calc(1.8rem + 1.5vw);
+    line-height: 30px;
     padding-top: 50px;
 }
 
