@@ -1,7 +1,8 @@
 ## Spaced Out
 
 Built: September 22, 2020\
-Responsive site using jQuery, HTML5, Sass and powered by 3 REST APIs (Where is the ISS at?, On Water and MapQuest)
+Paired prgramming responsive site using jQuery, HTML5, Sass and powered by 3 REST APIs (Where is the ISS at?, On Water and MapQuest)
+Created by: Kristen Delorey and Alex Gould
 
 ### Description
 Displays real-time positioning information about the International Space Station.
